@@ -26,6 +26,9 @@ else
   poetry install --no-dev
 fi
 
+version=$(git describe --tags --abbrev=0)
+poetry version "${version}"
+
 if [ -z $6 ]; then
   poetry build
 else
